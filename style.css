@@ -128,13 +128,6 @@ h1 {
     min-height: 26px;
 }
 
-
-.score__oneDisplay {}
-
-.score__twoDisplay {}
-
-.score__select {}
-
 #playTo {
     background-color: var(--second-bgCard-color);
     color: white;
@@ -152,8 +145,6 @@ h1 {
 #playTo::before {
     background-color: #2CEA1B;
 }
-
-.score__label {}
 
 .buttons {
     display: flex;
@@ -203,7 +194,6 @@ button:active {
     top: 1px;
 }
 
-
 .buttons_playerOne,
 .buttons_playerTwo {
     width: 90%;
@@ -218,15 +208,11 @@ button:active {
     border: none;
 }
 
-.buttons_playerOne {}
-
 .buttons_reset {
     width: 40%;
     margin: auto 11px;
     background-color: var(--ColorBtnReset);
 }
-
-.buttons_playerTwo {}
 
 .winner {
     background-color: #2CEA1B;
