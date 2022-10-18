@@ -52,5 +52,3 @@ winningScoreSelect.addEventListener('change', function () {
 });
 
 BtnReset.addEventListener('click', reset);
-
-

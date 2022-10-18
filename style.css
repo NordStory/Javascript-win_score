@@ -1,7 +1,241 @@
+:root {
+    --BackgroundColor: #111111;
+    --main-bgCard-color: #141414;
+    --second-bgCard-color: #292929;
+
+    --main-ColorBtn: #90C55B;
+    --ColorBtnReset: #f8641b;
+
+}
+
+html {
+    font-size: 15px;
+
+}
+
+body {
+    background-color: var(--BackgroundColor);
+
+}
+
+.cover {
+    text-align: center;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    max-width: 1024px;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    /* align-self: center; */
+    justify-content: center;
+}
+
+.cover>* {
+    margin-bottom: 14px;
+
+}
+
+.main-img {
+    width: 100%;
+    height: 250px;
+    background-image: url('/img/Art.jpg');
+    background-size: cover;
+    border-radius: 18px;
+    text-align: left;
+    padding-top: 7px;
+}
+
+#author {
+    text-decoration: none;
+    color: aliceblue;
+    background-color: #292929;
+    padding: 7px;
+    border-radius: 20px 20px / 20px 0px;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+}
+
+#author:hover {
+    background-color: #13aff0;
+}
+
+.score {
+    border-radius: 18px;
+    padding: 13px;
+    background-color: var(--main-bgCard-color);
+    display: flex;
+    gap: 19px;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+/* Team Left */
+.score__team {
+    background-color: var(--second-bgCard-color);
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 60%;
+    border-radius: 13px;
+}
+
+
+.team__Img {
+    padding: 7px;
+    max-width: 41px;
+    max-height: 41px;
+    min-width: 41px;
+    min-height: 41px;
+    border-radius: 10px;
+    background-size: cover;
+}
+
+#team1Img {
+    background-image: url('/img/vortex.jpg');
+}
+
+#team2Img {
+    background-image: url('/img/romans.jpg');
+}
+
+.team__h1 {
+    display: block;
+
+}
+
+/* score__main */
+.score__main {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+h1 {
+    display: flex;
+    gap: 7px;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.score__oneDisplay,
+.score__twoDisplay {
+    display: inline-block;
+    background-color: var(--second-bgCard-color);
+    border-radius: 6px;
+    min-width: 40px;
+    min-height: 26px;
+}
+
+
+.score__oneDisplay {}
+
+.score__twoDisplay {}
+
+.score__select {}
+
+#playTo {
+    background-color: var(--second-bgCard-color);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 60;
+    font-size: 1rem;
+    border-radius: 20px;
+    width: 100%;
+    height: 27px;
+    text-align: center;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#playTo::before {
+    background-color: #2CEA1B;
+}
+
+.score__label {}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons>* {
+    border-radius: 15px;
+    height: 40px;
+    font-weight: 900;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    border: none;
+    color: white;
+
+    position: relative;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+}
+
+button:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 15px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 1px 5px white;
+}
+
+button:active:after {
+    box-shadow: 0 0 0 0 white;
+    position: absolute;
+    border-radius: 15px;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 0s;
+}
+
+button:active {
+    top: 1px;
+}
+
+
+.buttons_playerOne,
+.buttons_playerTwo {
+    width: 90%;
+    background-color: var(--main-ColorBtn);
+
+}
+
+.buttons_playerOne:disabled,
+.buttons_playerTwo:disabled {
+    background-color: #233214;
+    color: rgb(143, 143, 143);
+    border: none;
+}
+
+.buttons_playerOne {}
+
+.buttons_reset {
+    width: 40%;
+    margin: auto 11px;
+    background-color: var(--ColorBtnReset);
+}
+
+.buttons_playerTwo {}
+
 .winner {
-    color: green;
+    background-color: #2CEA1B;
 }
 
 .loser {
-    color: red;
+    background-color: #EC3748;
+}
+
+#author-git>svg {
+    fill: white;
 }
