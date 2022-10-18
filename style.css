@@ -139,7 +139,10 @@ h1 {
     height: 27px;
     text-align: center;
     -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
+    text-align: -moz-center;
+    text-align: -webkit-center;
 }
 
 #playTo::before {
