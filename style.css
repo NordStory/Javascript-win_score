@@ -112,7 +112,7 @@ body {
     gap: 6px;
 }
 
-h1 {
+.score__h1 {
     display: flex;
     gap: 7px;
     font-size: 2rem;
@@ -227,4 +227,35 @@ button:active {
 
 #author-git>svg {
     fill: white;
+}
+
+@media (max-width: 538px) {
+    html {
+        font-size: 11px;
+
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* .score {
+        flex-direction: column;
+        align-items: center;
+    } */
+    .score {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    .score__h1 {
+        gap: 3px;
+    }
+
+    .score__team {
+        padding: 3px;
+    }
+
+    .team__h1 {
+        font-size: 1.3rem;
+    }
 }
