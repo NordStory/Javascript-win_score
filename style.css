@@ -39,7 +39,7 @@ body {
 .main-img {
     width: 100%;
     height: 250px;
-    background-image: url('/img/Art.jpg');
+    background-image: url('img/Art.jpg');
     background-size: cover;
     border-radius: 18px;
     text-align: left;
@@ -93,11 +93,11 @@ body {
 }
 
 #team1Img {
-    background-image: url('/img/vortex.jpg');
+    background-image: url('img/vortex.jpg');
 }
 
 #team2Img {
-    background-image: url('/img/romans.jpg');
+    background-image: url('img/romans.jpg');
 }
 
 .team__h1 {
