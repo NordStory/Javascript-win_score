@@ -8,6 +8,8 @@
 
 }
 
+
+
 html {
     font-size: 15px;
 
@@ -217,14 +219,6 @@ button:active {
     background-color: var(--ColorBtnReset);
 }
 
-.winner {
-    background-color: #2CEA1B;
-}
-
-.loser {
-    background-color: #EC3748;
-}
-
 #author-git>svg {
     fill: white;
 }
@@ -237,11 +231,6 @@ button:active {
 }
 
 @media (max-width: 480px) {
-
-    /* .score {
-        flex-direction: column;
-        align-items: center;
-    } */
     .score {
         gap: 5px;
         padding: 5px;
@@ -258,4 +247,12 @@ button:active {
     .team__h1 {
         font-size: 1.3rem;
     }
+}
+
+.winner {
+    background-color: #2CEA1B;
+}
+
+.loser {
+    background-color: #EC3748;
 }

@@ -17,12 +17,20 @@ let isGameOver = false;
 function updateScores(player, opponent) {
     if (!isGameOver) {
         player.score += 1;
-        if (player.score === winningScore) {
+        // (winningScore - player.score + opponent.score) === 1
+        if ((player.score + opponent.score) === winningScore || (winningScore - (player.score + opponent.score)) === 1 && !(player.score === opponent.score)) {
             isGameOver = true;
-            player.display.classList.add('winner')
-            opponent.display.classList.add('loser')
-            player.button.disabled = true;
-            opponent.button.disabled = true;
+            if (player.score > opponent.score) {
+                player.display.classList.add('winner')
+                opponent.display.classList.add('loser')
+                player.button.disabled = true;
+                opponent.button.disabled = true;
+            } else {
+                opponent.display.classList.add('winner')
+                player.display.classList.add('loser')
+                opponent.button.disabled = true;
+                player.button.disabled = true;
+            }
         }
         player.display.textContent = player.score;
     }
@@ -30,6 +38,7 @@ function updateScores(player, opponent) {
 
 function reset() {
     isGameOver = false;
+    match = 0;
     for (const player of [player1, player2]) {
         player.score = 0;
         player.display.textContent = 0;
