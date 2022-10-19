@@ -256,3 +256,7 @@ button:active {
 .loser {
     background-color: #EC3748;
 }
+
+.nobody {
+    background-color: #005eff;
+}

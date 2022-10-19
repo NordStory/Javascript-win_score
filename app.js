@@ -17,23 +17,39 @@ let isGameOver = false;
 function updateScores(player, opponent) {
     if (!isGameOver) {
         player.score += 1;
-        // (winningScore - player.score + opponent.score) === 1
-        if ((player.score + opponent.score) === winningScore || (winningScore - (player.score + opponent.score)) === 1 && !(player.score === opponent.score)) {
+        if (getWin(player, opponent)) {
             isGameOver = true;
+            player.button.disabled = true;
+            opponent.button.disabled = true;
             if (player.score > opponent.score) {
                 player.display.classList.add('winner')
                 opponent.display.classList.add('loser')
-                player.button.disabled = true;
-                opponent.button.disabled = true;
+            } else if (player.score === opponent.score) {
+                player.display.classList.add('nobody')
+                opponent.display.classList.add('nobody')
             } else {
                 opponent.display.classList.add('winner')
                 player.display.classList.add('loser')
-                opponent.button.disabled = true;
-                player.button.disabled = true;
             }
         }
         player.display.textContent = player.score;
     }
+}
+
+function getWin(player, opponent) {
+    if (winningScore % 2 === 0) {
+        if ((winningScore - (player.score + opponent.score)) === 1) {
+            if ((player.score + opponent.score + 1 === winningScore) && (opponent.score + 1 === player.score || player.score + 1 === opponent.score)) {
+                return false
+            } else {
+                return true
+            }
+        } else if ((winningScore - (player.score + opponent.score)) === 0) { return true }
+    } else {
+        if ((player.score + opponent.score) === winningScore || (winningScore - (player.score + opponent.score)) === 1 && !(player.score === opponent.score)) { return true }
+    }
+    return false;
+
 }
 
 function reset() {
@@ -42,7 +58,7 @@ function reset() {
     for (const player of [player1, player2]) {
         player.score = 0;
         player.display.textContent = 0;
-        player.display.classList.remove('winner', 'loser');
+        player.display.classList.remove('winner', 'loser', 'nobody');
         player.button.disabled = false;
     }
 }
